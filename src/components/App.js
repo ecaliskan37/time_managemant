@@ -80,8 +80,12 @@ const App = () => {
             type="number"
             ref={timerInitial}
             onChange={(e) => {
-              timerInitial.current = { ...sure, second: e.target.value }
-              setSure({ ...sure, second: e.target.value })
+              if (e.target.value.length <= 2) {
+                timerInitial.current = { ...sure, second: e.target.value }
+                setSure({ ...sure, second: e.target.value })
+              } else {
+                console.log(e.target.value.slice(0, 2))
+              }
             }}
           />
           Seconds
