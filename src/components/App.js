@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react'
 const App = () => {
   const [sure, setSure] = useState({ minute: '00', second: '00' })
   const [start, setStart] = useState(false)
-  const timerId = useRef('')
+  const timerId = useRef({ minute: '00', second: '00' })
   const timerInitial = useRef({ minute: '00', second: '00' })
 
   const timeFm = () => {
@@ -16,9 +16,11 @@ const App = () => {
 
   const handle = (x) => {
     if (!sure.minute || !sure.second) {
-      console.log('Hata değer giriniz')
+      alert('Hata değer giriniz')
     } else if (sure.minute > 60 || sure.second > 60) {
-      console.log('Değerler büyük!')
+      alert('Değerler büyük!')
+    } else if (sure.minute === '00' && sure.second === '00') {
+      alert('Sayı giriniz!')
     } else {
       switch (x) {
         case 's':
