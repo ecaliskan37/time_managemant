@@ -63,7 +63,11 @@ const App = () => {
                 timerInitial.current = { ...sure, minute: e.target.value }
                 setSure({ ...sure, minute: e.target.value })
               } else {
-                console.log(e.target.value.slice(0, 2))
+                timerInitial.current = {
+                  ...sure,
+                  minute: e.target.value.slice(0, 2),
+                }
+                setSure({ ...sure, minute: e.target.value.slice(0, 2) })
               }
             }}
           />
@@ -84,7 +88,11 @@ const App = () => {
                 timerInitial.current = { ...sure, second: e.target.value }
                 setSure({ ...sure, second: e.target.value })
               } else {
-                console.log(e.target.value.slice(0, 2))
+                timerInitial.current = {
+                  ...sure,
+                  second: e.target.value.slice(0, 2),
+                }
+                setSure({ ...sure, second: e.target.value.slice(0, 2) })
               }
             }}
           />
